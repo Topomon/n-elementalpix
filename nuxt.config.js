@@ -42,8 +42,7 @@ export default {
    */
   plugins: [
     { src: '@/plugins/cursorfx.js' },
-    { src: '@/plugins/vuescrollbar.js', ssr: false },
-    { src: '@/plugins/locomotive.js', ssr: false },
+    { src: '@/plugins/locomotive.js', mode: 'client' },
   ],
   /*
    ** Auto import components

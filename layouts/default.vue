@@ -1,6 +1,11 @@
 <template>
-  <div id="js-scroll" class="main-background">
-    <div class="md:pl-16 md:pr-16 pl-8 pr-8 flex justify-end">
+  <div id="js-scroll">
+    <div
+      data-scroll
+      data-scroll-speed="1"
+      data-scroll-section
+      class="md:pl-16 md:pr-16 pl-8 pr-8 flex justify-end"
+    >
       <Navbar class="items-center flex h-32" />
     </div>
     <Nuxt class="md:pl-16 md:pr-16 pl-8 pr-8" />
@@ -30,11 +35,9 @@
 </template>
 
 <style lang="sass">
-.main-background
-  z-index: -1
-  // background-color: #111111
-body
+html
   overflow: hidden
+body
   background-color: #111111
   ::selection
     color: #111111

@@ -17,8 +17,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "locomotive-scroll": "^3.5.4",
     "lodash": "^4.17.19",
-    "nuxt": "^2.13.0",
-    "vue-smooth-scrollbar": "^0.1.2"
+    "nuxt": "^2.13.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
