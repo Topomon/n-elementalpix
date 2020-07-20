@@ -22,7 +22,7 @@ export default {
           el: document.querySelector('#js-scroll'),
           smooth: true /* if false disable overflow: hidden on html, body */,
           lerp: 0.05,
-          repeat: true,
+          smoothMobile: true,
         })
         console.log('mounted')
 

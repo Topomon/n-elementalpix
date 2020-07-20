@@ -25,23 +25,21 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      // {
-      //   src:
-      //     'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver',
-      // },
-    ],
+    script: [],
   },
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.scss'],
+  css: [
+    '@/assets/css/main.scss',
+    '@/assets/fonts.css', // Serve custom fonts from server
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    { src: '@/plugins/cursorfx.js' },
+    { src: '@/plugins/cursorfx.js' }, // It will console Error if mode is client
     { src: '@/plugins/locomotive.js', mode: 'client' },
   ],
   /*
@@ -65,13 +63,13 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     // '@nuxtjs/axios',
     // '@nuxtjs/pwa',
-    'nuxt-webfontloader',
+    // 'nuxt-webfontloader',
   ],
-  webfontloader: {
-    google: {
-      families: ['Questrial: 400', 'Frank Ruhl Libre:300,400,500,700,900'],
-    },
-  },
+  // webfontloader: {
+  //   google: {
+  //     families: ['Questrial: 400', 'Frank Ruhl Libre:300,400,500,700,900'],
+  //   },
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
