@@ -7,8 +7,8 @@
 module.exports = {
   theme: {
     fontFamily: {
-      sans: 'Questrial',
-      serif: 'Frank Ruhl Libre',
+      sans: ['Questrial'],
+      serif: ['Frank Ruhl Libre'],
     },
   },
   variants: {},

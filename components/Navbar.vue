@@ -1,5 +1,7 @@
 <template>
-  <div class="text-gray-700 font-bold text-sm">
+  <div
+    class="container mx-auto text-gray-700 font-bold text-sm flex justify-end"
+  >
     <nuxt-link
       class="hover:text-gray-500 transition-colors duration-500"
       data-cursor-hover

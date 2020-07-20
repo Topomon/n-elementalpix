@@ -1,7 +1,7 @@
 <template>
   <div class="custom-height flex items-center">
     <div
-      class="font-serif text-2xl sm:text-2xl md:text-4xl lg:text-6xl text-gray-500 font-light container mx-auto p-3 normalize-position"
+      class="font-serif text-2xl sm:text-2xl md:text-4xl lg:text-6xl text-gray-500 font-light container mx-auto normalize-position"
     >
       <p>elemental<span class="font-bold pix text-orange-500"> px</span></p>
     </div>

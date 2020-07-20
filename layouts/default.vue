@@ -4,7 +4,7 @@
       data-scroll
       data-scroll-speed="1"
       data-scroll-section
-      class="md:pl-16 md:pr-16 pl-8 pr-8 flex justify-end"
+      class="md:pl-16 md:pr-16 pl-8 pr-8"
     >
       <Navbar class="items-center flex h-32" />
     </div>

@@ -4,7 +4,7 @@
     <div
       class="text-gray-500"
       data-scroll
-      data-scroll-speed="0.1"
+      data-scroll-speed="1"
       data-scroll-section
     >
       <div
