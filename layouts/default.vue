@@ -1,12 +1,20 @@
 <template>
-  <div id="js-scroll" data-scroll data-scroll-speed="1" data-scroll-container>
-    <Nuxt class="md:pl-16 md:pr-16 pl-8 pr-8" />
+  <div id="js-scroll" data-scroll data-scroll-container>
+    <Nuxt />
   </div>
 </template>
 
 <style lang="sass">
 html
-  overflow: hidden
+  cursor: none
+
+@media (min-width: 1024px)
+  html
+    overflow: hidden
+
+a
+  cursor: none
+
 body
   background-color: #111111
   ::selection

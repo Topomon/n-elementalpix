@@ -1,40 +1,148 @@
 <template>
-  <div>
+  <div data-scroll-container data-scroll>
+    <section data-scroll data-scroll-section class="text-gray-500">
+      <NavigationBar />
+      <div
+        class="text-4xl lg:text-6xl text-gray-500 font-light container mx-auto grid items-center h-80vh"
+      >
+        <div class="md:pl-16 md:pr-16 pl-10 pr-10">
+          <p class="font-serif enter-up text-center lg:text-left">
+            elemental<span class="font-serif font-bold pix text-orange-500">
+              px</span
+            >
+          </p>
+          <p
+            class="second-enter-up lg:text-3xl mt-16 lg:pr-56 text-center lg:text-left text-2xl pr-10 pl-10 lg:p-0"
+          >
+            Somos un estudio creativo con sólidos principios de diseño y
+            experiencia en desarrollo web.
+          </p>
+        </div>
+      </div>
+    </section>
     <section
-      data-scroll
-      data-scroll-speed="1"
       data-scroll-section
-      class="text-gray-500"
+      class="text-gray-500 font-black tracking-widest container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
     >
-      <div class="items-center flex h-32 md:pl-16 md:pr-16 pl-8 pr-8">
-        <nuxt-link
-          class="hover:text-gray-500 transition-colors duration-500 container mx-auto text-gray-700 text-sm font-bold flex justify-end"
-          data-cursor-hover
-          data-cursor-mix-blend-mode="difference"
-          to="/acerca-de"
+      <div
+        class="text-4xl lg:text-5xl text-center lg:text-left pt-32 pb-32 h-64"
+      >
+        <div
+          data-scroll
+          data-scroll-speed="1"
+          class="text-gray-700 leading-none"
         >
-          ACERCA DE
-        </nuxt-link>
+          nuestros
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="1.5"
+          class="text-gray-500 leading-none"
+        >
+          proyectos
+        </div>
       </div>
-      <div
-        data-scroll
-        data-scroll-speed="5"
-        class="font-serif text-2xl sm:text-2xl md:text-4xl lg:text-6xl text-gray-500 font-light container mx-auto min-h-screen flex items-center"
-      >
-        <p>elemental<span class="font-bold pix text-orange-500"> px</span></p>
+    </section>
+    <Proyecto />
+
+    <section
+      class="text-gray-500 container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
+      data-scroll-section
+    >
+      <div id="scroll-direction2" class="">
+        <div class="">
+          <div
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target="#scroll-direction2"
+            class="lg:flex min-h-screen"
+          >
+            <div class="w-auto xl:w-1/2 lg:grid lg:items-center">
+              <div>
+                <p class="text-xl" data-scroll data-scroll-speed="0.5">
+                  Squidplot
+                </p>
+                <p
+                  class="lg:text-3xl pt-10 pr-10"
+                  data-scroll
+                  data-scroll-speed="1"
+                >
+                  Servicio de impresión online
+                </p>
+                <p
+                  class="text-lg pt-10 text-gray-600"
+                  data-scroll
+                  data-scroll-speed="1.5"
+                >
+                  diseño + desarrollo + responsive + e-commerce
+                </p>
+              </div>
+            </div>
+            <div class="w-auto xl:w-1/2">
+              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
+            </div>
+          </div>
+          <div class="lg:flex">
+            <div class="w-auto xl:w-1/2">
+              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
+            </div>
+            <div class="w-auto xl:w-1/2 lg:grid lg:items-center pb-10">
+              <img class="" src="~assets/img/img3.png" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div
-        class="container mx-auto font-black p-4 md:p-16 lg:p-32 text-2xl md:text-4xl lg:text-6xl bg-gray-900"
-      >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        esse repellendus fugiat molestias cupiditate cumque culpa necessitatibus
-        velit animi deleniti! Reprehenderit sit maiores veritatis aliquam
-        recusandae enim numquam eveniet nam!
+    </section>
+    <section
+      class="text-gray-500 container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
+      data-scroll-section
+    >
+      <div id="scroll-direction3" class="">
+        <div class="">
+          <div
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target="#scroll-direction3"
+            class="lg:flex min-h-screen"
+          >
+            <div class="w-auto xl:w-1/2 lg:grid lg:items-center">
+              <div>
+                <p class="text-xl" data-scroll data-scroll-speed="0.5">
+                  Jorge Alberto Ayllón
+                </p>
+                <p
+                  class="lg:text-3xl pt-10 pr-10"
+                  data-scroll
+                  data-scroll-speed="1"
+                >
+                  Portafolio de artista
+                </p>
+                <p
+                  class="text-lg pt-10 text-gray-600"
+                  data-scroll
+                  data-scroll-speed="1.5"
+                >
+                  diseño + desarrollo + responsive
+                </p>
+              </div>
+            </div>
+            <div class="w-auto xl:w-1/2">
+              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
+            </div>
+          </div>
+          <div class="lg:flex">
+            <div class="w-auto xl:w-1/2">
+              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
+            </div>
+            <div class="w-auto xl:w-1/2 lg:grid lg:items-center pb-10">
+              <img class="" src="~assets/img/img2.png" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <cursor-fx
-      class="show-mouse"
       :shape="'square'"
       :mix-blend-mode="'difference'"
       :outside-size="'50px'"
@@ -66,26 +174,31 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@keyframes enter-up
+  0%
+    opacity: 0
+  30%
+    opacity: 0
+  100%
+    opacity: 1
+    transform: translateY(-50px)
+
+.enter-up
+  animation: enter-up 2s forwards
+
+.second-enter-up
+  opacity: 0
+  transform: translateY(50px)
+  animation: enter-up 2s 0.5s forwards
 .pix
   &::after
     content: ''
     position: absolute
-    margin-top: 8px
+    margin-top: 13px
     border-radius: 1px
-    height: 3px
-    width: 3px
+    height: 6px
+    width: 6px
     background-color: #ed8936
-
-@media (min-width: 640px)
-  .pix
-    &::after
-      content: ''
-      position: absolute
-      margin-top: 8px
-      border-radius: 1px
-      height: 4px
-      width: 4px
-      background-color: #ed8936
 
 @media (min-width: 768px)
   .pix

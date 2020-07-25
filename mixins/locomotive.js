@@ -10,7 +10,7 @@ export default {
   },
   watch: {
     $route() {
-      console.log('route changed: ', this.$route)
+      // console.log('route changed: ', this.$route)
       this.lmS.update()
     },
   },
@@ -22,9 +22,9 @@ export default {
           el: document.querySelector('#js-scroll'),
           smooth: true /* if false disable overflow: hidden on html, body */,
           lerp: 0.05,
-          smoothMobile: true,
+          // smoothMobile: true,
         })
-        console.log('mounted')
+        // console.log('mounted')
 
         this.lmS.on('scroll', _.throttle(this.onLmsScroll, 150))
         window.addEventListener(
@@ -35,7 +35,7 @@ export default {
     )
   },
   destroyed() {
-    console.log('destroy')
+    // console.log('destroy')
     this.lmS.destroy()
     window.removeEventListener('resize', this.onLmsResize)
   },
@@ -47,14 +47,14 @@ export default {
   methods: {
     onLmsScroll(obj) {
       this.scrollPosition = obj.scroll.y
-      console.log('scrollPosition + na', this.scrollPosition)
+      // console.log('scrollPosition + na', this.scrollPosition)
       if (this.scrollPosition < OFFSET) {
         if (this.isNavSmall) {
-          console.log('grow')
+          // console.log('grow')
           mutations.growNav()
         }
       } else if (!this.isNavSmall) {
-        console.log('shrink')
+        // console.log('shrink')
         mutations.shrinkNav()
       }
     },

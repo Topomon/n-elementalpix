@@ -3,7 +3,6 @@
     class="container mx-auto text-gray-700 text-sm font-bold flex justify-end"
   >
     <nuxt-link
-      :key="1"
       class="hover:text-gray-500 transition-colors duration-500"
       data-cursor-hover
       data-cursor-mix-blend-mode="difference"
