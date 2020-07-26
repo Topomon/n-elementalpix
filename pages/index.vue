@@ -1,9 +1,9 @@
 <template>
   <div data-scroll-container data-scroll>
-    <section data-scroll data-scroll-section class="text-gray-500">
+    <section data-scroll data-scroll-section class="text-gray-500 hero">
       <NavigationBar />
       <div
-        class="text-4xl lg:text-6xl text-gray-500 font-light container mx-auto grid items-center h-80vh"
+        class="text-4xl lg:text-6xl text-gray-500 font-light container mx-auto grid items-center justify-center h-80vh"
       >
         <div class="md:pl-16 md:pr-16 pl-10 pr-10">
           <p class="font-serif enter-up text-center lg:text-left">
@@ -11,136 +11,39 @@
               px</span
             >
           </p>
-          <p
-            class="second-enter-up lg:text-3xl mt-16 lg:pr-56 text-center lg:text-left text-2xl pr-10 pl-10 lg:p-0"
-          >
+        </div>
+      </div>
+
+      <div
+        class="text-4xl lg:text-6xl text-gray-500 font-light container mx-auto grid items-center h-80vh"
+      >
+        <div class="md:pl-16 md:pr-16 pl-10 pr-10">
+          <p class="font-black text-2xl md:text-4xl lg:text-6xl lg:text-left">
             Somos un estudio creativo con sólidos principios de diseño y
             experiencia en desarrollo web.
           </p>
         </div>
       </div>
     </section>
-    <section
-      data-scroll-section
-      class="text-gray-500 font-black tracking-widest container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
-    >
-      <div
-        class="text-4xl lg:text-5xl text-center lg:text-left pt-32 pb-32 h-64"
-      >
-        <div
-          data-scroll
-          data-scroll-speed="1"
-          class="text-gray-700 leading-none"
-        >
-          nuestros
-        </div>
-        <div
-          data-scroll
-          data-scroll-speed="1.5"
-          class="text-gray-500 leading-none"
-        >
-          proyectos
-        </div>
-      </div>
-    </section>
-    <Proyecto />
 
-    <section
-      class="text-gray-500 container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
-      data-scroll-section
-    >
-      <div id="scroll-direction2" class="">
-        <div class="">
-          <div
-            data-scroll
-            data-scroll-sticky
-            data-scroll-target="#scroll-direction2"
-            class="lg:flex min-h-screen"
-          >
-            <div class="w-auto xl:w-1/2 lg:grid lg:items-center">
-              <div>
-                <p class="text-xl" data-scroll data-scroll-speed="0.5">
-                  Squidplot
-                </p>
-                <p
-                  class="lg:text-3xl pt-10 pr-10"
-                  data-scroll
-                  data-scroll-speed="1"
-                >
-                  Servicio de impresión online
-                </p>
-                <p
-                  class="text-lg pt-10 text-gray-600"
-                  data-scroll
-                  data-scroll-speed="1.5"
-                >
-                  diseño + desarrollo + responsive + e-commerce
-                </p>
-              </div>
-            </div>
-            <div class="w-auto xl:w-1/2">
-              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
-            </div>
-          </div>
-          <div class="lg:flex">
-            <div class="w-auto xl:w-1/2">
-              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
-            </div>
-            <div class="w-auto xl:w-1/2 lg:grid lg:items-center pb-10">
-              <img class="" src="~assets/img/img3.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      class="text-gray-500 container mx-auto lg:pl-16 lg:pr-16 md:pl-32 md:pr-32 pl-10 pr-10"
-      data-scroll-section
-    >
-      <div id="scroll-direction3" class="">
-        <div class="">
-          <div
-            data-scroll
-            data-scroll-sticky
-            data-scroll-target="#scroll-direction3"
-            class="lg:flex min-h-screen"
-          >
-            <div class="w-auto xl:w-1/2 lg:grid lg:items-center">
-              <div>
-                <p class="text-xl" data-scroll data-scroll-speed="0.5">
-                  Jorge Alberto Ayllón
-                </p>
-                <p
-                  class="lg:text-3xl pt-10 pr-10"
-                  data-scroll
-                  data-scroll-speed="1"
-                >
-                  Portafolio de artista
-                </p>
-                <p
-                  class="text-lg pt-10 text-gray-600"
-                  data-scroll
-                  data-scroll-speed="1.5"
-                >
-                  diseño + desarrollo + responsive
-                </p>
-              </div>
-            </div>
-            <div class="w-auto xl:w-1/2">
-              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
-            </div>
-          </div>
-          <div class="lg:flex">
-            <div class="w-auto xl:w-1/2">
-              <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
-            </div>
-            <div class="w-auto xl:w-1/2 lg:grid lg:items-center pb-10">
-              <img class="" src="~assets/img/img2.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Proyecto
+      :id="1"
+      :description="'Destacando el diseño a través de la arquitectura'"
+      :title="'Ve Arquitectura'"
+      :tags="'diseño + desarrollo + responsive'"
+    />
+    <Proyecto
+      :id="3"
+      :description="'Servicio de impresión online'"
+      :title="'Squidplot'"
+      :tags="'diseño + desarrollo + responsive + e-commerce'"
+    />
+    <Proyecto
+      :id="2"
+      :description="'Portafolio de artista contemporáneo'"
+      :title="'Jorge alberto Ayllon'"
+      :tags="'diseño + desarrollo + responsive'"
+    />
 
     <cursor-fx
       :shape="'square'"
@@ -174,6 +77,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.hero
+  background-color: #111111
+
 @keyframes enter-up
   0%
     opacity: 0

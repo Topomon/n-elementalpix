@@ -11,28 +11,23 @@
       <div
         data-scroll
         data-scroll-speed="1"
-        class="container mx-auto font-black p-4 md:p-16 lg:p-32 text-2xl md:text-4xl lg:text-6xl"
+        class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl lg:h-80vh lg:items-center lg:grid"
       >
         Cada pixel es elemental
       </div>
       <div
         data-scroll
         data-scroll-speed="3"
-        class="container mx-auto font-black p-4 md:p-16 lg:p-32 text-2xl md:text-4xl lg:text-6xl"
+        class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        esse repellendus fugiat molestias cupiditate cumque culpa necessitatibus
-        velit animi deleniti! Reprehenderit sit maiores veritatis aliquam
-        recusandae enim numquam eveniet nam!
+        Realizamos proyectos únicos porque sabemos que cada tipo de proyecto
+        debe abordarse de manera distinta.
       </div>
 
       <div
-        class="container mx-auto font-black p-4 md:p-16 lg:p-32 text-2xl md:text-4xl lg:text-6xl"
+        class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        esse repellendus fugiat molestias cupiditate cumque culpa necessitatibus
-        velit animi deleniti! Reprehenderit sit maiores veritatis aliquam
-        recusandae enim numquam eveniet nam!
+        Nuestras áreas de expertise
       </div>
     </section>
 

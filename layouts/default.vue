@@ -16,7 +16,7 @@ a
   cursor: none
 
 body
-  background-color: #111111
+  background-color: #ffffff
   ::selection
     color: #111111
     background: #a0aec0
