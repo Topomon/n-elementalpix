@@ -1,15 +1,26 @@
 <template>
-  <div data-scroll-container data-scroll>
+  <div id="js-scroll" class="" data-scroll-container>
     <section data-scroll data-scroll-section class="text-gray-500 hero">
-      <NavigationBar />
+      <div class="appear items-center flex h-32 justify-end container mx-auto">
+        <div
+          class="text-gray-700 text-sm font-bold md:pl-16 md:pr-16 pl-10 pr-10"
+        >
+          <nuxt-link
+            class="hover:text-gray-500 transition-colors duration-500"
+            data-cursor-hover
+            data-cursor-mix-blend-mode="difference"
+            to="/acerca-de"
+          >
+            ACERCA DE
+          </nuxt-link>
+        </div>
+      </div>
       <div
         class="text-4xl lg:text-6xl text-gray-500 font-light container mx-auto grid items-center justify-center h-80vh"
       >
         <div class="md:pl-16 md:pr-16 pl-10 pr-10">
           <p class="font-serif enter-up text-center lg:text-left">
-            elemental<span class="font-serif font-bold pix text-orange-500">
-              px</span
-            >
+            elemental<span class="font-serif font-bold pix"> px</span>
           </p>
         </div>
       </div>
@@ -33,16 +44,16 @@
       :tags="'diseño + desarrollo + responsive'"
     />
     <Proyecto
-      :id="3"
-      :description="'Servicio de impresión online'"
-      :title="'Squidplot'"
-      :tags="'diseño + desarrollo + responsive + e-commerce'"
-    />
-    <Proyecto
       :id="2"
       :description="'Portafolio de artista contemporáneo'"
       :title="'Jorge alberto Ayllon'"
       :tags="'diseño + desarrollo + responsive'"
+    />
+    <Proyecto
+      :id="3"
+      :description="'Servicio de impresión online'"
+      :title="'Squidplot'"
+      :tags="'diseño + desarrollo + responsive + e-commerce'"
     />
 
     <cursor-fx
@@ -73,10 +84,15 @@ import locomotive from '~/mixins/locomotive.js'
 
 export default {
   mixins: [locomotive],
+  mounted() {
+    console.log('index mounted')
+  },
 }
 </script>
 
 <style lang="sass" scoped>
+$pix-color: #a0aec0
+
 .hero
   background-color: #111111
 
@@ -104,7 +120,7 @@ export default {
     border-radius: 1px
     height: 6px
     width: 6px
-    background-color: #ed8936
+    background-color: $pix-color
 
 @media (min-width: 768px)
   .pix
@@ -115,7 +131,7 @@ export default {
       border-radius: 1px
       height: 6px
       width: 6px
-      background-color: #ed8936
+      background-color: $pix-color
 
 @media (min-width: 1024px)
   .pix
@@ -126,7 +142,7 @@ export default {
       border-radius: 2px
       height: 10px
       width: 10px
-      background-color: #ed8936
+      background-color: $pix-color
 
 @media (min-width: 1280px)
   .pix
@@ -137,5 +153,5 @@ export default {
       border-radius: 2px
       height: 10px
       width: 10px
-      background-color: #ed8936
+      background-color: $pix-color
 </style>

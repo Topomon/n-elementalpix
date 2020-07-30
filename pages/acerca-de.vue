@@ -1,13 +1,22 @@
 /* eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
-  <div>
-    <section
-      data-scroll
-      data-scroll-section
-      data-scroll-speed="1"
-      class="text-gray-500"
-    >
-      <NavigationBar />
+  <div id="js-scroll" class="" data-scroll-container>
+    <!-- <nuxt-link class="font-gray-400" to="/">Back</nuxt-link> -->
+    <section data-scroll data-scroll-section class="text-gray-500 acerca">
+      <div class="appear items-center flex h-32 justify-end container mx-auto">
+        <div
+          class="text-gray-700 text-sm font-bold md:pl-16 md:pr-16 pl-10 pr-10"
+        >
+          <nuxt-link
+            class="hover:text-gray-500 transition-colors duration-500"
+            data-cursor-hover
+            data-cursor-mix-blend-mode="difference"
+            to="/"
+          >
+            CERRAR
+          </nuxt-link>
+        </div>
+      </div>
       <div
         data-scroll
         data-scroll-speed="1"
@@ -59,5 +68,13 @@ import locomotive from '~/mixins/locomotive.js'
 
 export default {
   mixins: [locomotive],
+  mounted() {
+    console.log('acerca-de mounted')
+  },
 }
 </script>
+
+<style lang="sass" scoped>
+.acerca
+  background-color: #111111
+</style>
