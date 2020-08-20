@@ -1,5 +1,7 @@
 <template>
-  <div>CONTACTO</div>
+  <div>
+    <h1>Jorge Alberto Ayllon</h1>
+  </div>
 </template>
 
 <script>

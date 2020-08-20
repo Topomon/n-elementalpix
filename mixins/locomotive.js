@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import _ from 'lodash'
+import imagesLoaded from 'imagesloaded'
 import { store, mutations } from '~/store/store.js'
 const OFFSET = 350
 
@@ -20,11 +21,14 @@ export default {
     this.lmS.update()
   },
   mounted() {
+    // imagesLoaded('#js-scroll', () => {
+    //   this.createLMS()
+    // })
     // console.log('locomotive mixin mounted')
-    setTimeout(() => {
-      this.createLMS()
-    }, 100)
-    // this.createLMS()
+    // setTimeout(() => {
+    //   this.createLMS()
+    // }, 100)
+    this.createLMS()
   },
   destroyed() {
     // console.log('locomotive scroll destroyed')
@@ -53,7 +57,7 @@ export default {
           // this.lmS.on('scroll', _.throttle(this.onLmsScroll, 150))
           window.addEventListener(
             'resize',
-            _.debounce(this.onLmsResize.bind(this), 50)
+            _.debounce(this.onLmsResize.bind(this), 150)
           )
         }.bind(this)
       )
@@ -72,7 +76,7 @@ export default {
     //   }
     // },
     onLmsResize() {
-      console.log('updated LMS')
+      // console.log('updated LMS')
       setTimeout(() => {
         this.lmS.update()
       }, 100)

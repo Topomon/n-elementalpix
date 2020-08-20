@@ -1,5 +1,7 @@
 <template>
-  <div>CONTACTO</div>
+  <div>
+    <h1>Ve Arquitectura</h1>
+  </div>
 </template>
 
 <script>

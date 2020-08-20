@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
-  <div id="js-scroll" class="" data-scroll-container>
+  <div class="" data-scroll-container>
     <!-- <nuxt-link class="font-gray-400" to="/">Back</nuxt-link> -->
     <section data-scroll data-scroll-section class="text-gray-500 acerca">
       <div class="appear items-center flex h-32 justify-end container mx-auto">
@@ -40,7 +40,7 @@
       </div>
     </section>
 
-    <cursor-fx
+    <!-- <cursor-fx
       :shape="'square'"
       :mix-blend-mode="'difference'"
       :outside-size="'50px'"
@@ -59,7 +59,7 @@
           custom: 0.23,
         },
       }"
-    />
+    /> -->
   </div>
 </template>
 
@@ -69,7 +69,7 @@ import locomotive from '~/mixins/locomotive.js'
 export default {
   mixins: [locomotive],
   mounted() {
-    console.log('acerca-de mounted')
+    // console.log('acerca-de mounted')
   },
 }
 </script>

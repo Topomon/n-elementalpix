@@ -1,0 +1,308 @@
+<template>
+  <section
+    class="c-section -fixed container mx-auto"
+    data-scroll-section
+    data-persistent
+  >
+    <div class="xl:hidden p-4">
+      <nuxt-link :to="`/proyecto/${id}`"
+        ><img class="rounded-lg shadow-lg" alt="" :src="image"
+      /></nuxt-link>
+      <p class="text-xl p-8 text-center text-gray-800 font-bold w-40vh mx-auto">
+        <span class="underline"
+          ><nuxt-link :to="`/proyecto/${id}/`">{{ title }}</nuxt-link></span
+        >
+        <span class="text-xl text-center text-gray-800 font-medium">
+          - {{ description }}</span
+        >
+      </p>
+    </div>
+    <div :id="`fixed-elements-${id}`" class="o-container hidden xl:block">
+      <div class="o-layout">
+        <div class="o-layout_item xl:w-3/5">
+          <div
+            class="c-fixed_wrapper"
+            data-scroll
+            data-scroll-call="dynamicBackground"
+            data-scroll-repeat
+          >
+            <div :id="`fixed-target-${id}`" class="c-fixed_target"></div>
+            <div
+              class="c-fixed relative"
+              data-scroll
+              data-scroll-sticky
+              :data-scroll-target="`#fixed-target-${id}`"
+              :style="`background-image: url(${image})`"
+            >
+              <nuxt-link
+                data-cursor-hover
+                class="absolute link-proyecto"
+                :to="`/proyecto/${id}/`"
+              >
+                <div class="link-proyecto"></div>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+        <div class="o-layout_item xl:w-2/5">
+          <div
+            class="c-section_infos -padding pl-20"
+            data-scroll
+            data-scroll-sticky
+            :data-scroll-target="`#fixed-elements-${id}`"
+          >
+            <div
+              class="c-section_infos_inner"
+              data-scroll
+              data-scroll-speed="0.5"
+              data-scroll-offset="250"
+            >
+              <h3
+                data-scroll
+                data-scroll-speed="0"
+                class="text-2xl text-gray-800"
+              >
+                {{ title }}
+              </h3>
+              <div class="">
+                <p
+                  data-scroll
+                  data-scroll-speed="0.5"
+                  class="lg:text-4xl text-gray-800 font-bold"
+                >
+                  <nuxt-link data-cursor-hover :to="`/proyecto/${id}/`">
+                    {{ description }}
+                  </nuxt-link>
+                </p>
+                <p
+                  data-scroll
+                  data-scroll-speed="1"
+                  class="text-xl text-gray-600"
+                >
+                  {{ tags }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  props: {
+    id: {
+      type: String,
+      default: 'Id',
+    },
+    title: {
+      type: String,
+      default: 'Title',
+    },
+    description: {
+      type: String,
+      default: 'Description',
+    },
+    tags: {
+      type: String,
+      default: 'Tags',
+    },
+  },
+
+  computed: {
+    image() {
+      return require(`~/assets/img/img-${this.id}.png`)
+    },
+  },
+}
+</script>
+
+<style>
+.link-proyecto {
+  min-height: 378px;
+  width: 100%;
+  top: calc((100vh - 378px) / 2);
+}
+
+.c-section {
+  position: relative;
+}
+@media (max-width: 1199px) {
+  /* .c-section {
+    padding-bottom: 10vh;
+    margin-bottom: 10vh;
+  } */
+}
+@media (min-width: 1200px) {
+  /* .c-section {
+    padding-bottom: 35vh;
+  } */
+}
+.c-section_infos {
+  position: relative;
+  /* max-width: 500px; */
+  z-index: 0;
+}
+@media (min-width: 1000px) {
+  /* .c-section_infos {
+    padding-top: 7.5rem;
+  } */
+  .c-section_infos.-padding {
+    background-color: transparent;
+    padding-top: 40vh;
+    padding-bottom: 25vh;
+  }
+}
+@media (max-width: 999px) {
+  /* .c-section_infos {
+    margin-bottom: 1.875rem;
+  } */
+}
+.c-section_infos_inner > * {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.c-section_infos_inner.is-inview > * {
+  opacity: 1;
+  transform: none;
+}
+.c-section_infos_inner.is-inview > :first-child {
+  transition-delay: 0.06s;
+}
+.c-section_infos_inner.is-inview > :nth-child(2) {
+  transition-delay: 0.12s;
+}
+.c-section_infos_inner.is-inview > :nth-child(3) {
+  transition-delay: 0.18s;
+}
+.c-sections_infos_text {
+  margin-top: 1.25rem;
+}
+.o-container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 95rem;
+}
+@media (max-width: 699px) {
+  /* .o-container {
+    padding-right: 20px;
+    padding-left: 20px;
+  } */
+}
+@media (min-width: 700px) {
+  /* .o-container {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  } */
+}
+.o-layout {
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+  margin: 0;
+}
+.o-layout.-gutter {
+  margin-left: -3.75rem;
+}
+.o-layout.-gutter-small {
+  margin-left: -1.875rem;
+}
+.o-layout.-center {
+  text-align: center;
+}
+.o-layout.-right {
+  text-align: right;
+}
+.o-layout.-reverse {
+  direction: rtl;
+}
+.o-layout.-reverse.-flex {
+  flex-direction: row-reverse;
+}
+.o-layout.-flex {
+  display: flex;
+}
+.o-layout.-flex.-top {
+  align-items: flex-start;
+}
+.o-layout.-flex.-middle {
+  align-items: center;
+}
+.o-layout.-flex.-bottom {
+  align-items: flex-end;
+}
+.o-layout.-stretch {
+  align-items: stretch;
+}
+.o-layout_item {
+  display: inline-block;
+  /* width: 50%; */
+  vertical-align: top;
+  font-size: 1rem;
+  padding-left: 0;
+}
+.o-layout.-gutter > .o-layout_item {
+  padding-left: 3.75rem;
+}
+.o-layout.-gutter-small > .o-layout_item {
+  padding-left: 1.875rem;
+}
+.o-layout.-middle > .o-layout_item {
+  vertical-align: middle;
+}
+.o-layout.-bottom > .o-layout_item {
+  vertical-align: bottom;
+}
+.o-layout.-center > .o-layout_item,
+.o-layout.-reverse > .o-layout_item,
+.o-layout.-right > .o-layout_item {
+  text-align: left;
+}
+.o-layout.-reverse > .o-layout_item {
+  direction: ltr;
+}
+html.is-ready .o-layout_item:nth-child(2) .c-header_heading_label {
+  transition-delay: 0.1s;
+}
+
+.c-fixed_wrapper {
+  position: relative;
+  overflow: hidden;
+  /* background-color: #721919; */
+}
+@media (min-width: 1000px) {
+  .c-fixed_wrapper {
+    height: 100vh;
+  }
+}
+@media (max-width: 999px) {
+  .c-fixed_wrapper {
+    height: 100vh;
+  }
+}
+.c-fixed_target {
+  bottom: -100vh;
+}
+.c-fixed,
+.c-fixed_target {
+  position: absolute;
+  top: -100vh;
+  right: 0;
+  left: 0;
+}
+.c-fixed {
+  height: 100%;
+  background-size: contain;
+  background-position: 50%;
+  opacity: 1;
+  background-repeat: no-repeat;
+  /* mix-blend-mode: multiply; */
+}
+html:not(.has-scroll-smooth) .c-fixed {
+  top: 0;
+}
+</style>

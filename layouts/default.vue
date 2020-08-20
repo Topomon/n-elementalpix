@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="js-scroll">
     <Nuxt />
   </div>
 </template>
@@ -26,15 +26,14 @@
   animation: appear 2s forwards
 
 html
-  cursor: none
-  background-color: #ffffff
+  cursor: default
 
 @media (min-width: 1024px)
   html
     overflow: hidden
 
 a
-  cursor: none
+  cursor: pointer
 
 body
   overflow: hidden
@@ -44,12 +43,12 @@ body
     color: #111111
     background: #a0aec0
 
-@keyframes show-mouse
-  0%
-    opacity: 0.3
-  100%
-    opacity: 1
+// @keyframes show-mouse
+//   0%
+//     opacity: 0.3
+//   100%
+//     opacity: 1
 
-.show-mouse
-  animation: show-mouse 2s
+// .show-mouse
+//   animation: show-mouse 2s
 </style>

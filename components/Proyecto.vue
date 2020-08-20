@@ -12,24 +12,29 @@
           :data-scroll-target="`#scroll-direction${id}`"
           class="xl:flex hidden min-h-screen"
         >
-          <div data-scroll class="w-auto xl:w-1/2 lg:grid lg:items-center">
-            <div>
+          <div class="w-auto xl:w-2/3 lg:min-h-screen lg:flex">
+            <div data-scroll class="lg:grid lg:items-center">
+              <!-- <img data-scroll class="" alt="" :src="image" /> -->
+            </div>
+          </div>
+          <div data-scroll class="w-auto xl:w-1/3 lg:grid lg:items-center">
+            <div class="ml-10">
               <p
-                class="text-xl pb-6 text-gray-900"
+                class="text-xl pb-8 text-gray-900"
                 data-scroll
                 data-scroll-speed="0.5"
               >
                 {{ title }}
               </p>
               <p
-                class="lg:text-3xl pb-6 mr-10 text-gray-800 font-semibold"
+                class="lg:text-3xl pb-6 text-gray-800 font-semibold"
                 data-scroll
                 data-scroll-speed="1"
               >
                 {{ description }}
               </p>
               <p
-                class="text-lg text-gray-700"
+                class="text-md text-gray-700"
                 data-scroll
                 data-scroll-speed="1.5"
               >
@@ -37,20 +42,12 @@
               </p>
             </div>
           </div>
-          <!-- <div class="w-auto xl:w-1/2">
-            <img class="" src="~assets/img/img1.png" alt="" />
-          </div> -->
         </div>
-        <div data-scroll class="lg:flex">
-          <div data-scroll class="w-auto xl:w-1/2">
-            <!-- <img class="" src="~assets/img/img1.png" alt="" /> -->
+        <div data-scroll class="lg:flex lg:min-h-screen">
+          <div data-scroll class="w-auto xl:w-2/3 lg:grid lg:items-center">
+            <img data-scroll class="shadow-xl" alt="" :src="image" />
           </div>
-          <div
-            data-scroll
-            class="w-auto xl:w-1/2 lg:grid lg:items-center shadow-xl"
-          >
-            <img data-scroll class="" alt="" :src="image" />
-          </div>
+          <div data-scroll class="w-auto xl:w-1/3"></div>
         </div>
       </div>
     </div>
@@ -85,7 +82,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.topo
-  height: 5000px
-</style>
+<style lang="sass" scoped></style>
