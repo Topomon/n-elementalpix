@@ -6,7 +6,7 @@
   >
     <div class="xl:hidden p-4">
       <nuxt-link :to="`/proyecto/${id}`"
-        ><img class="rounded-lg shadow-lg" alt="" :src="image"
+        ><img class="rounded-lg shadow-lg" alt="" :src="imagen"
       /></nuxt-link>
       <p class="text-xl p-8 text-center text-gray-800 font-bold w-40vh mx-auto">
         <span class="underline"
@@ -32,7 +32,7 @@
               data-scroll
               data-scroll-sticky
               :data-scroll-target="`#fixed-target-${id}`"
-              :style="`background-image: url(${image})`"
+              :style="`background-image: url(${imagen});`"
             >
               <nuxt-link
                 data-cursor-hover
@@ -45,10 +45,10 @@
           </div>
         </div>
         <div class="o-layout_item xl:w-2/5">
+          <!-- add data-scroll-sticky to make text stop within range -->
           <div
             class="c-section_infos -padding pl-20"
             data-scroll
-            data-scroll-sticky
             :data-scroll-target="`#fixed-elements-${id}`"
           >
             <div
@@ -110,11 +110,18 @@ export default {
       default: 'Tags',
     },
   },
-
-  computed: {
-    image() {
-      return require(`~/assets/img/img-${this.id}.png`)
-    },
+  data() {
+    return {
+      imagen: null,
+    }
+  },
+  // computed: {
+  //   image() {
+  //     return require(`~/assets/img/img-${this.id}.png`)
+  //   },
+  // },
+  mounted() {
+    this.imagen = require(`~/assets/img/img-${this.id}.png`)
   },
 }
 </script>

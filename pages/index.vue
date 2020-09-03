@@ -37,6 +37,14 @@
             Somos un estudio creativo con sólidos principios de diseño y
             experiencia en desarrollo web.
           </p>
+          <div
+            class="w-full h-10vh"
+            :style="`background-image: url(${require('~/assets/img/img-ve-arquitectura.png')});`"
+            alt=""
+          ></div>
+          <nuxt-link data-cursor-hover to="/proyecto/ve-arquitectura/">
+            Ve-Aruitectur
+          </nuxt-link>
         </div>
       </div>
     </section>
@@ -49,7 +57,6 @@
         Descubre nuestros proyectos
       </div>
     </section>
-
     <Ventana
       :id="`ve-arquitectura`"
       :description="'Destacando el diseño a través de la arquitectura'"
@@ -90,7 +97,7 @@
         </p>
       </div>
     </section>
-    <cursor-fx
+    <!-- <cursor-fx
       :shape="'square'"
       :mix-blend-mode="'difference'"
       :outside-size="'50px'"
@@ -109,7 +116,7 @@
           custom: 0.23,
         },
       }"
-    />
+    /> -->
   </div>
 </template>
 

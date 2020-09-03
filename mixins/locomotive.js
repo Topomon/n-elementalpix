@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import _ from 'lodash'
-import imagesLoaded from 'imagesloaded'
+// import imagesLoaded from 'imagesloaded'
 import { store, mutations } from '~/store/store.js'
 const OFFSET = 350
 
@@ -51,7 +51,7 @@ export default {
           this.lmS = new this.LocomotiveScroll({
             el: document.querySelector('#js-scroll'),
             smooth: true /* if false disable overflow: hidden on html, body */,
-            lerp: 0.05,
+            lerp: 0.07,
             // smoothMobile: true,
           })
           // this.lmS.on('scroll', _.throttle(this.onLmsScroll, 150))
