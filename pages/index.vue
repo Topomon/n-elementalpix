@@ -37,14 +37,6 @@
             Somos un estudio creativo con sólidos principios de diseño y
             experiencia en desarrollo web.
           </p>
-          <div
-            class="w-full h-10vh"
-            :style="`background-image: url(${require('~/assets/img/img-ve-arquitectura.png')});`"
-            alt=""
-          ></div>
-          <nuxt-link data-cursor-hover to="/proyecto/ve-arquitectura/">
-            Ve-Aruitectur
-          </nuxt-link>
         </div>
       </div>
     </section>
@@ -81,7 +73,7 @@
         <p
           data-scroll
           data-scroll-speed="0"
-          class="text-gray-200 lg:text-6xl font-bold lg:pt-25vh"
+          class="text-gray-200 text-4xl md:text-6xl font-bold pt-40vh md:pt-25vh"
         >
           ¿Quieres crear algo?
         </p>
@@ -90,11 +82,23 @@
             <span
               data-cursor-hover
               data-cursor-mix-blend-mode="difference"
-              class="text-gray-700 lg:text-6xl hover:text-gray-200 duration-300 transition-colors"
+              class="text-gray-600 text-4xl md:text-6xl hover:text-gray-200 duration-300 transition-colors"
               >Cuéntanos . . .</span
             ></nuxt-link
           >
         </p>
+        <div class="text-gray-200 bottom-0 pb-10vh absolute">
+          <p class="text-2xl pb-4">
+            <a to="mailto:info@elemetalpix.com" data-cursor-hover
+              >info@elementalpix.com</a
+            >
+          </p>
+          <p class="text-sm">
+            <nuxt-link data-cursor-hover to="/politica-de-privacidad/"
+              >Política de privacidad</nuxt-link
+            >
+          </p>
+        </div>
       </div>
     </section>
     <!-- <cursor-fx

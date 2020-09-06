@@ -80,7 +80,7 @@ export default {
       setTimeout(() => {
         this.lmS.update()
       }, 100)
-      this.lmS.scrollTo('top', 0, 0)
+      // this.lmS.scrollTo('top', 0, 0)
     },
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="c-section -fixed container mx-auto"
+    class="c-section container mx-auto"
     data-scroll-section
     data-persistent
   >
@@ -32,7 +32,7 @@
               data-scroll
               data-scroll-sticky
               :data-scroll-target="`#fixed-target-${id}`"
-              :style="`background-image: url(${imagen});`"
+              :style="{ backgroundImage: `url(${imagen})` }"
             >
               <nuxt-link
                 data-cursor-hover
@@ -110,18 +110,10 @@ export default {
       default: 'Tags',
     },
   },
-  data() {
-    return {
-      imagen: null,
-    }
-  },
-  // computed: {
-  //   image() {
-  //     return require(`~/assets/img/img-${this.id}.png`)
-  //   },
-  // },
-  mounted() {
-    this.imagen = require(`~/assets/img/img-${this.id}.png`)
+  computed: {
+    imagen() {
+      return require(`~/assets/img/img-${this.id}.png`)
+    },
   },
 }
 </script>
@@ -308,8 +300,5 @@ html.is-ready .o-layout_item:nth-child(2) .c-header_heading_label {
   opacity: 1;
   background-repeat: no-repeat;
   /* mix-blend-mode: multiply; */
-}
-html:not(.has-scroll-smooth) .c-fixed {
-  top: 0;
 }
 </style>

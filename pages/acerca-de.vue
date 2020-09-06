@@ -19,24 +19,15 @@
       </div>
       <div
         data-scroll
-        data-scroll-speed="1"
         class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl lg:h-80vh lg:items-center lg:grid"
       >
         Cada pixel es elemental
       </div>
       <div
         data-scroll
-        data-scroll-speed="3"
         class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl"
       >
-        Realizamos proyectos únicos porque sabemos que cada tipo de proyecto
-        debe abordarse de manera distinta.
-      </div>
-
-      <div
-        class="container mx-auto font-black p-4 md:p-16 text-2xl md:text-4xl lg:text-6xl"
-      >
-        Nuestras áreas de expertise
+        Texto o descripción importante aquí
       </div>
     </section>
 
