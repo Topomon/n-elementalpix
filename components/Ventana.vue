@@ -4,22 +4,53 @@
     data-scroll-section
     data-persistent
   >
-    <div class="xl:hidden p-4">
-      <nuxt-link :to="`/proyecto/${id}`"
-        ><img class="rounded-lg shadow-lg" alt="" :src="imagen"
-      /></nuxt-link>
-      <p class="text-xl p-8 text-center text-gray-800 font-bold w-40vh mx-auto">
-        <span class="underline"
-          ><nuxt-link :to="`/proyecto/${id}/`">{{ title }}</nuxt-link></span
+    <div
+      class="xl:hidden md:pl-16 md:pr-16 pl-10 pr-10 pb-10 lg:pl-0 lg:pr-0 lg:pb-0"
+    >
+      <div
+        class="relative overflow-hidden custom-pb bg-white hover:shadow-lg transition-shadow duration-300"
+      >
+        <nuxt-link tabindex="-1" :to="`/proyecto/${id}`"
+          ><img
+            class="absolute h-full w-full object-left-top object-cover md:object-contain"
+            alt=""
+            :src="imagen"
+          />
+          <div
+            class="bottom-0 left-0 right-0 text-center absolute bg-white md:h-2/5 p-6 m-6 sm:p-6 sm:m-8"
+          >
+            <div
+              class="md:absolute md:bottom-0 md:left-0 md:right-0 md:top-0 md:grid md:items-center md:m-12 lg:m-6"
+            >
+              <p
+                class="text-base font-bold md:font-normal md:text-lg sm:text-xl text-gray-800"
+              >
+                {{ title }}
+              </p>
+              <p class="text-2xl font-bold hidden md:block">
+                {{ description }}
+              </p>
+              <p class="text-gray-600 hidden md:block">{{ tags }}</p>
+            </div>
+          </div></nuxt-link
         >
-        <span class="text-xl text-center text-gray-800 font-medium">
-          - {{ description }}</span
-        >
-      </p>
+      </div>
+      <!-- <div class="relative">
+        <p class="text-xl pt-4 text-center text-gray-800 font-bold mx-auto">
+          <span class="underline"
+            ><nuxt-link tabindex="-1" :to="`/proyecto/${id}/`">{{
+              title
+            }}</nuxt-link></span
+          >
+        </p>
+      </div> -->
     </div>
-    <div :id="`fixed-elements-${id}`" class="o-container hidden xl:block">
+    <div
+      :id="`fixed-elements-${id}`"
+      class="o-container hidden xl:block lg:pl-6 lg:pr-6"
+    >
       <div class="o-layout">
-        <div class="o-layout_item xl:w-3/5">
+        <div class="o-layout_item xl:w-3/5 lg:w-1/2">
           <div
             class="c-fixed_wrapper"
             data-scroll
@@ -28,15 +59,16 @@
           >
             <div :id="`fixed-target-${id}`" class="c-fixed_target"></div>
             <div
-              class="c-fixed relative"
+              class="c-fixed"
               data-scroll
               data-scroll-sticky
               :data-scroll-target="`#fixed-target-${id}`"
               :style="{ backgroundImage: `url(${imagen})` }"
             >
               <nuxt-link
+                tabindex="-1"
                 data-cursor-hover
-                class="absolute link-proyecto"
+                class="absolute link-proyecto outline-none"
                 :to="`/proyecto/${id}/`"
               >
                 <div class="link-proyecto"></div>
@@ -44,10 +76,10 @@
             </div>
           </div>
         </div>
-        <div class="o-layout_item xl:w-2/5">
+        <div class="o-layout_item xl:w-2/5 lg:w-1/2">
           <!-- add data-scroll-sticky to make text stop within range -->
           <div
-            class="c-section_infos -padding pl-20"
+            class="c-section_infos -padding xl:pl-3vw lg:pl-8 lg:pr-8"
             data-scroll
             :data-scroll-target="`#fixed-elements-${id}`"
           >
@@ -55,12 +87,12 @@
               class="c-section_infos_inner"
               data-scroll
               data-scroll-speed="0.5"
-              data-scroll-offset="250"
+              data-scroll-offset="0"
             >
               <h3
                 data-scroll
                 data-scroll-speed="0"
-                class="text-2xl text-gray-800"
+                class="text-gray-800 font-medium xl:text-2xl xl:pb-2 lg:text-xl lg:pb-4"
               >
                 {{ title }}
               </h3>
@@ -68,16 +100,20 @@
                 <p
                   data-scroll
                   data-scroll-speed="0.5"
-                  class="lg:text-4xl text-gray-800 font-bold"
+                  class="text-gray-800 font-black xl:text-4xl xl:pb-2 lg:text-2xl lg:pb-4"
                 >
-                  <nuxt-link data-cursor-hover :to="`/proyecto/${id}/`">
+                  <nuxt-link
+                    class="font-black"
+                    data-cursor-hover
+                    :to="`/proyecto/${id}/`"
+                  >
                     {{ description }}
                   </nuxt-link>
                 </p>
                 <p
                   data-scroll
                   data-scroll-speed="1"
-                  class="text-xl text-gray-600"
+                  class="text-gray-600 xl:text-lg"
                 >
                   {{ tags }}
                 </p>
@@ -119,32 +155,27 @@ export default {
 </script>
 
 <style>
-.link-proyecto {
-  min-height: 378px;
-  width: 100%;
-  top: calc((100vh - 378px) / 2);
+.custom-pb {
+  padding-bottom: 100%;
+}
+@media (min-width: 1280px) {
+  .link-proyecto {
+    min-height: 378px;
+    width: 100%;
+    top: calc((100vh - 378px) / 2);
+  }
 }
 
 .c-section {
   position: relative;
 }
-@media (max-width: 1199px) {
-  /* .c-section {
-    padding-bottom: 10vh;
-    margin-bottom: 10vh;
-  } */
-}
-@media (min-width: 1200px) {
-  /* .c-section {
-    padding-bottom: 35vh;
-  } */
-}
+
 .c-section_infos {
   position: relative;
   /* max-width: 500px; */
   z-index: 0;
 }
-@media (min-width: 1000px) {
+@media (min-width: 1280px) {
   /* .c-section_infos {
     padding-top: 7.5rem;
   } */
@@ -154,10 +185,15 @@ export default {
     padding-bottom: 25vh;
   }
 }
-@media (max-width: 999px) {
+@media (max-width: 1279px) {
   /* .c-section_infos {
     margin-bottom: 1.875rem;
   } */
+  .c-section_infos.-padding {
+    background-color: transparent;
+    padding-top: 40vh;
+    padding-bottom: 5vh;
+  }
 }
 .c-section_infos_inner > * {
   opacity: 0;

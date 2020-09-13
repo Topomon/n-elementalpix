@@ -4,14 +4,7 @@
   </div>
 </template>
 
-<script>
-// import locomotive from '~/mixins/locomotive.js'
-
-// export default {
-//   mixins: [locomotive],
-
-// }
-</script>
+<script></script>
 
 <style lang="sass">
 @keyframes appear
@@ -32,11 +25,14 @@ html
   html
     overflow: hidden
 
+@media (max-width: 1023px)
+  html, body
+    overflow: auto
 a
   cursor: pointer
 
 body
-  overflow: hidden
+  overflow: auto
   margin: 0
   padding: 0
   ::selection
