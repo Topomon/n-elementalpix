@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import _ from 'lodash'
-const OFFSET = 350
+// import _ from 'lodash'
+const debounce = require('lodash/debounce')
 
 export default {
   data() {
@@ -40,7 +40,7 @@ export default {
           })
           window.addEventListener(
             'resize',
-            _.debounce(this.onLmsResize.bind(this), 150)
+            debounce(this.onLmsResize.bind(this), 150)
           )
         }.bind(this)
       )
