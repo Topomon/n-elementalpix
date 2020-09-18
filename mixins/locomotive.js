@@ -36,6 +36,7 @@ export default {
             el: document.querySelector('#js-scroll'),
             smooth: true /* if false disable overflow: hidden on html, body */,
             lerp: 0.07,
+            multiplier: 0.5,
             // smoothMobile: true,
           })
           window.addEventListener(
@@ -48,6 +49,7 @@ export default {
     onLmsResize() {
       setTimeout(() => {
         this.lmS.update()
+        window.removeEventListener('resize', this.onLmsResize)
       }, 100)
       // this.lmS.scrollTo('top', 0, 0)
     },

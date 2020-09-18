@@ -35,15 +35,6 @@
           </div></nuxt-link
         >
       </div>
-      <!-- <div class="relative">
-        <p class="text-xl pt-4 text-center text-gray-800 font-bold mx-auto">
-          <span class="underline"
-            ><nuxt-link tabindex="-1" :to="`/proyecto/${id}/`">{{
-              title
-            }}</nuxt-link></span
-          >
-        </p>
-      </div> -->
     </div>
     <div
       :id="`fixed-elements-${id}`"
@@ -195,6 +186,7 @@ export default {
     padding-bottom: 5vh;
   }
 }
+
 .c-section_infos_inner > * {
   opacity: 0;
   transform: translateY(60px);

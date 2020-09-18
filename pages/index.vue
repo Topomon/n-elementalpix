@@ -52,22 +52,22 @@
       class="lg:grid lg:grid-cols-2 lg:gap-10 xl:gap-0 xl:grid-cols-none lg:p-10 xl:p-0"
     >
       <Ventana
-        :id="'ve-arquitectura'"
-        :description="'Destacando el diseño a través de la arquitectura'"
-        :title="'Ve Arquitectura'"
-        :tags="'diseño + desarrollo + responsive'"
+        id="ve-arquitectura"
+        description="Destacando el diseño a través de la arquitectura"
+        title="Ve Arquitectura"
+        tags="diseño + desarrollo + responsive"
       />
       <Ventana
-        :id="'squidplot'"
-        :description="'Servicio de impresión online'"
-        :title="'Squidplot'"
-        :tags="'diseño + desarrollo + responsive + e-commerce'"
+        id="squidplot"
+        description="Servicio de impresión online"
+        title="Squidplot"
+        tags="diseño + desarrollo + responsive + e-commerce"
       />
       <Ventana
-        :id="'jorgealbertoayllon'"
-        :description="'Portafolio de artista contemporáneo'"
-        :title="'Jorge Alberto Ayllon'"
-        :tags="'diseño + desarrollo + responsive'"
+        id="jorgealbertoayllon"
+        description="Portafolio de artista contemporáneo"
+        title="Jorge Alberto Ayllon"
+        tags="diseño + desarrollo + responsive"
       />
     </div>
     <div class="xl:h-64 md:h-20"></div>
@@ -156,22 +156,7 @@ $pix-color: #a0aec0
 .hero
   background-color: #111111
 
-@keyframes enter-up
-  0%
-    opacity: 0
-  30%
-    opacity: 0
-  100%
-    opacity: 1
-    transform: translateY(-50px)
 
-.enter-up
-  animation: enter-up 2s forwards
-
-.second-enter-up
-  opacity: 0
-  transform: translateY(50px)
-  animation: enter-up 2s 0.5s forwards
 .pix
   &::after
     content: ''
