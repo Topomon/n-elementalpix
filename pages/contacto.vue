@@ -1,24 +1,26 @@
 <template>
-  <div data-scroll-container class="bg-gray-100">
+  <div data-scroll-container class="">
     <section
       data-scroll
       data-scroll-section
       class="container mx-auto md:pl-16 md:pr-16 pl-10 pr-10"
     >
       <div
+        data-scroll
         class="lg:pt-64 pt-40 text-4xl md:text-5xl lg:text-7xl font-bold banner"
       >
         <p class="rotateX">Hola!</p>
         <p class="rotateX">Cuéntanos sobre tu proyecto</p>
       </div>
       <div
+        data-scroll
         class="pt-32 lg:text-3xl md:text-2xl text-xl text-gray-400 font-bold"
       >
         <p class="enter-up">
           Creo que necesito ...
         </p>
       </div>
-      <div class="flex flex-wrap pt-8 enter-up lg:w-4/5">
+      <div data-scroll class="flex flex-wrap pt-8 enter-up lg:w-4/5">
         <Checkbox text="Diseño Web" />
         <Checkbox text="HTML/CSS" />
         <Checkbox text="Desarrollo Web" />
@@ -29,12 +31,13 @@
         <Checkbox text="Diseño responsive" />
       </div>
       <div
+        data-scroll
         class="pt-20 pb-20 xl:text-3xl text-base font-bold text-gray-400 container mx-auto"
       >
         <form action="" class="lg:w-4/5">
           <InputField text="Nombre" />
           <InputField text="Correo" />
-          <InputField text="Descripción" />
+          <TextAreaField text="Descripción" />
           <InputField text="Presupuesto" />
         </form>
       </div>

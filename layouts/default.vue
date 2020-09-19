@@ -4,7 +4,19 @@
   </div>
 </template>
 
-<script></script>
+<script>
+// const arrow = function (e) {
+//   e.preventDefault()
+//   e.stopPropagation()
+//   console.log(e)
+//   return false
+// }
+export default {
+  // mounted() {
+  //   window.addEventListener('keydown', arrow)
+  // },
+}
+</script>
 
 <style lang="sass">
 *

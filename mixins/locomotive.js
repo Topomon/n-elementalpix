@@ -27,6 +27,11 @@ export default {
       this.onLmsResize
       // console.log('destroyed')
     )
+    window.removeEventListener(
+      'keydown',
+      this.onLmsKeydown
+      // console.log('destroyed')
+    )
   },
   methods: {
     createLMS() {
@@ -37,12 +42,19 @@ export default {
             smooth: true /* if false disable overflow: hidden on html, body */,
             lerp: 0.07,
             multiplier: 0.5,
-            // smoothMobile: true,
           })
           window.addEventListener(
             'resize',
             debounce(this.onLmsResize.bind(this), 150)
           )
+          window.addEventListener(
+            'keydown',
+            debounce(this.onLmsKeydown.bind(this), 10)
+          )
+          window.addEventListener('wheel', (e) => {
+            // console.log(this.lmS.scroll)
+            this.lmS.scroll.stop = false
+          })
         }.bind(this)
       )
     },
@@ -52,6 +64,14 @@ export default {
         window.removeEventListener('resize', this.onLmsResize)
       }, 100)
       // this.lmS.scrollTo('top', 0, 0)
+    },
+    onLmsKeydown() {
+      setTimeout(() => {
+        // this.lmS.stop()
+        // this.lmS.update()
+        this.lmS.scroll.stop = true
+        window.removeEventListener('keydown', this.onLmsKeydown)
+      }, 500)
     },
   },
 }

@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <p>{{ text }}</p>
+  <div class="mt-6">
+    <!-- <p>{{ text }}</p> -->
     <input
       :id="text"
-      class="outline-none border-b border-gray-400 focus:border-gray-900 transition-colors w-full duration-1000"
+      autocomplete="off"
+      :placeholder="text"
+      class="outline-none border-b-2 p-3 border-gray-400 focus:border-gray-900 transition-colors w-full duration-1000 text-black font-bold"
       type="text"
       :name="text"
     />
@@ -21,4 +23,7 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+input::placeholder
+  color: #cbd5e0
+</style>
