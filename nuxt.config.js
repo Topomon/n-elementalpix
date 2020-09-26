@@ -44,7 +44,8 @@ export default {
    */
   plugins: [
     { src: '@/plugins/cursorfx.js' }, // It will console Error if mode is client
-    { src: '@/plugins/locomotive.js', mode: 'client' },
+    { src: '@/plugins/locomotive.js', mode: 'client' }, // Need client mode to work
+    { src: '@/plugins/vuelidate.js' },
   ],
   /*
    ** Auto import components
@@ -65,7 +66,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    // '@nuxtjs/axios',
+    '@nuxtjs/axios',
     // '@nuxtjs/pwa',
     // 'nuxt-webfontloader',
   ],
