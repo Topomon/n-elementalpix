@@ -2,21 +2,29 @@
   <div class="mt-6">
     <input
       :id="text"
-      v-model="inputContent"
+      v-model="nameField"
       autocomplete="off"
       :placeholder="text"
-      class="outline-none border-b-2 p-3 border-gray-400 placeholder-gray-400 focus:border-gray-900 w-full text-black font-bold transition-colors duration-1000"
+      class="outline-none border-b-2 p-3 border-gray-400 placeholder-gray-400 focus:border-gray-900 w-full text-gray-900 font-bold transition-colors duration-300"
       type="text"
       :name="text"
       :class="{
         'border-red-300 placeholder-red-300 text-red-300 focus:border-red-300':
-          $v.inputContent.$error,
-        'border-gray-900': $v.inputContent.$dirty,
+          $v.nameField.$error,
+        'border-gray-900': $v.nameField.$dirty,
       }"
-      @input="$emit('update:input:change', $event.target.value)"
-      @change="validateInput($event.target.value)"
+      @input="validateOnInput($event.target.value)"
+      @change="touch()"
     />
-    <!-- <p class="mt-3 text-red-400" v-if="!$v.name.required">Field is required</p> -->
+    <p
+      :class="{
+        'opacity-100 translate-y-1 text-red-300':
+          $v.nameField.$invalid && $v.nameField.$dirty,
+      }"
+      class="absolute text-gray-400 text-base ml-3 font-normal transition-all transform opacity-0 duration-300"
+    >
+      Dinos quién eres
+    </p>
   </div>
 </template>
 
@@ -31,18 +39,22 @@ export default {
   },
   data() {
     return {
-      inputContent: '',
+      nameField: '',
     }
   },
   validations: {
-    inputContent: {
+    nameField: {
       required,
     },
   },
   mounted() {},
   methods: {
-    validateInput(value) {
-      this.$v.inputContent.$touch()
+    touch() {
+      this.$v.nameField.$touch()
+    },
+    validateOnInput(value) {
+      this.$emit('update:input:change', value)
+      this.$parent.validateInput()
     },
   },
 }

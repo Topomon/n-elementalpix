@@ -1,37 +1,13 @@
-/* eslint-disable no-unused-vars */
-// import _ from 'lodash'
 const debounce = require('lodash/debounce')
 
 export default {
-  data() {
-    return {
-      scrollPosition: 0,
-    }
-  },
-  // watch: {
-  //   $route() {
-  //     console.log('route changed: ', this.$route)
-  //     this.lmS.update()
-  //   },
-  // },
   mounted() {
-    // setTimeout(() => {
-    //   this.createLMS()
-    // }, 100)
     this.createLMS()
   },
   destroyed() {
     this.lmS.destroy()
-    window.removeEventListener(
-      'resize',
-      this.onLmsResize
-      // console.log('destroyed')
-    )
-    window.removeEventListener(
-      'keydown',
-      this.onLmsKeydown
-      // console.log('destroyed')
-    )
+    window.removeEventListener('resize', this.onLmsResize)
+    window.removeEventListener('keydown', this.onLmsKeydown)
   },
   methods: {
     createLMS() {
@@ -52,26 +28,25 @@ export default {
             debounce(this.onLmsKeydown.bind(this), 10)
           )
           window.addEventListener('wheel', (e) => {
-            // console.log(this.lmS.scroll)
             this.lmS.scroll.stop = false
           })
         }.bind(this)
       )
     },
     onLmsResize() {
-      setTimeout(() => {
+      this.$nextTick(() => {
         this.lmS.update()
         window.removeEventListener('resize', this.onLmsResize)
-      }, 100)
+      })
       // this.lmS.scrollTo('top', 0, 0)
     },
     onLmsKeydown() {
-      setTimeout(() => {
+      this.$nextTick(() => {
         // this.lmS.stop()
         // this.lmS.update()
         this.lmS.scroll.stop = true
         window.removeEventListener('keydown', this.onLmsKeydown)
-      }, 500)
+      })
     },
   },
 }

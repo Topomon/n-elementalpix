@@ -40,9 +40,8 @@
         </div>
       </div>
     </section>
-    <section data-scroll-section class="xl:block container mx-auto">
+    <section data-scroll data-scroll-section class="xl:block container mx-auto">
       <div
-        data-scroll
         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-800 text-center grid items-center h-60vh md:pl-16 md:pr-16 pl-10 pr-10 md:h-60vh lg:h-60vh xl:h-90vh"
       >
         Descubre nuestros proyectos
@@ -71,7 +70,7 @@
       />
     </div>
     <div class="xl:h-64 md:h-20"></div>
-    <section data-scroll-section class="xl:h-screen hero">
+    <section data-scroll data-scroll-section class="xl:h-screen hero">
       <div
         class="container mx-auto md:pl-16 md:pr-16 pl-10 pr-10 text-center md:text-left pt-20vh pb-10vh"
       >
@@ -133,6 +132,7 @@
 import locomotive from '~/mixins/locomotive.js'
 
 export default {
+  name: 'HomePage',
   mixins: [locomotive],
   mounted() {
     // console.log('index mounted')
