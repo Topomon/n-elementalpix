@@ -72,7 +72,7 @@
                 'opacity-100 ': !formIsValid,
                 'opacity-100': formSendError,
               }"
-              class="text-red-300 text-xl px-8 pt-8 lg:mt-10 transition-all duration-300 opacity-0"
+              class="text-red-300 text-xl px-8 pt-8 lg:pt-10 transition-all duration-300 opacity-0"
               >{{ formMessage }}</span
             >
           </div>
@@ -177,12 +177,16 @@ export default {
         // console.log('Form is valid')
         // Send axios request because form is valid
         await this.$axios
-          .post('http://localhost:8080/', this.constructFormData(), {
-            progress: false,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          })
+          .post(
+            'https://us-central1-sengridmail.cloudfunctions.net/youvegotmail',
+            this.constructFormData(),
+            {
+              progress: false,
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          )
           .then((response) => {
             // console.log(response)
             this.formSendError = false

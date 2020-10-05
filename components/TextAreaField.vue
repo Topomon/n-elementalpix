@@ -3,7 +3,7 @@
     <textarea
       v-model="textAreaField"
       maxlength="200"
-      placeholder="Escríbenos los detalles aquí (Max. 200 caracteres)"
+      placeholder="Escríbenos los detalles aquí ( max. 200 )"
       class="outline-none border-b-2 p-3 border-gray-400 focus:border-gray-900 transition-colors duration-1000 w-full resize-none overflow-auto break-words font-bold text-black"
       :class="{
         'border-gray-900': $v.textAreaField.$dirty,
