@@ -36,7 +36,7 @@ export default {
    */
   css: [
     '@/assets/css/main.scss',
-    '@/assets/fonts.css', // Serve custom fonts from server
+    '@/assets/fonts/fonts.css', // Serve custom fonts from server
   ],
   /*
    ** Plugins to load before mounting the App
