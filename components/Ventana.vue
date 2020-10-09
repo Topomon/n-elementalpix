@@ -62,7 +62,7 @@
                 class="absolute link-proyecto outline-none"
                 :to="`/proyecto/${id}/`"
               >
-                <div class="link-proyecto"></div>
+                <div class="link-proyecto bg-red-500 opacity-50"></div>
               </nuxt-link>
             </div>
           </div>
@@ -151,9 +151,9 @@ export default {
 }
 @media (min-width: 1280px) {
   .link-proyecto {
-    min-height: 378px;
+    min-height: 364px;
     width: 100%;
-    top: calc((100vh - 378px) / 2);
+    top: calc((100vh - 364px) / 2);
   }
 }
 

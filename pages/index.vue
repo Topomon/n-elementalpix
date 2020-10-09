@@ -3,10 +3,10 @@
     <section data-scroll data-scroll-section class="text-gray-500 hero">
       <div class="appear items-center flex h-32 justify-end container mx-auto">
         <div
-          class="text-gray-700 text-sm font-bold md:pl-16 md:pr-16 pl-10 pr-10"
+          class="text-gray-600 text-sm font-bold md:pl-16 md:pr-16 pl-10 pr-10"
         >
           <nuxt-link
-            class="hover:text-gray-500 transition-colors duration-500"
+            class="hover:text-gray-200 transition-colors duration-500"
             data-cursor-hover
             data-cursor-mix-blend-mode="difference"
             to="/acerca-de/"
@@ -19,9 +19,9 @@
         class="text-4xl lg:text-5xl xl:text-6xl text-gray-500 font-light container mx-auto grid items-center justify-center md:h-80vh h-70vh"
       >
         <div class="md:pl-16 md:pr-16 pl-10 pr-10">
-          <p class="font-serif enter-up text-center lg:text-left">
-            elemental<span class="font-serif font-bold pix"> px</span>
-          </p>
+          <Logo
+            class="stroke-current fill-current enter-up lg:w-auto lg:max-w-sm md:w-auto md:max-w-xs w-48"
+          />
         </div>
       </div>
 
@@ -134,69 +134,12 @@ import locomotive from '~/mixins/locomotive.js'
 export default {
   name: 'HomePage',
   mixins: [locomotive],
-  mounted() {
-    // console.log('index mounted')
-  },
 }
 </script>
 
 <style lang="sass" scoped>
 $pix-color: #a0aec0
-.contenedor-de-tapa
-  position: absolute
-  top: 0
-  z-index: 20
-  width: 100%
-  height: 100%
-  opacity: 0.5
-
-.tapa
-  height: calc((100vh - 378px) / 2)
 
 .hero
   background-color: #111111
-
-
-.pix
-  &::after
-    content: ''
-    position: absolute
-    margin-top: 13px
-    border-radius: 1px
-    height: 6px
-    width: 6px
-    background-color: $pix-color
-
-@media (min-width: 768px)
-  .pix
-    &::after
-      content: ''
-      position: absolute
-      margin-top: 13px
-      border-radius: 1px
-      height: 6px
-      width: 6px
-      background-color: $pix-color
-
-@media (min-width: 1024px)
-  .pix
-    &::after
-      content: ''
-      position: absolute
-      margin-top: 26px
-      border-radius: 2px
-      height: 10px
-      width: 10px
-      background-color: $pix-color
-
-@media (min-width: 1280px)
-  .pix
-    &::after
-      content: ''
-      position: absolute
-      margin-top: 26px
-      border-radius: 2px
-      height: 10px
-      width: 10px
-      background-color: $pix-color
 </style>
