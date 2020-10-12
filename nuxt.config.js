@@ -4,11 +4,6 @@ export default {
     host: '0.0.0.0',
   },
   /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: 'universal',
-  /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
@@ -68,13 +63,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // '@nuxtjs/pwa',
-    // 'nuxt-webfontloader',
   ],
-  // webfontloader: {
-  //   google: {
-  //     families: ['Questrial: 400', 'Frank Ruhl Libre:300,400,500,700,900'],
-  //   },
-  // },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

@@ -62,7 +62,7 @@
                 class="absolute link-proyecto outline-none"
                 :to="`/proyecto/${id}/`"
               >
-                <div class="link-proyecto bg-red-500 opacity-50"></div>
+                <div class="link-proyecto"></div>
               </nuxt-link>
             </div>
           </div>
