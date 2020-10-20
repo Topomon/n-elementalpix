@@ -94,3 +94,6 @@ sw.*
 
 # Editor
 .editorconfig
+
+# Old components
+components/old
