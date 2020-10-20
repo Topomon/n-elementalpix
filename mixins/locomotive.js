@@ -2,50 +2,48 @@ const debounce = require('lodash/debounce')
 
 export default {
   mounted() {
-    this.createLMS()
+    this.mixinCreateLMS()
   },
   destroyed() {
     this.lmS.destroy()
-    window.removeEventListener('resize', this.onLmsResize)
-    window.removeEventListener('keydown', this.onLmsKeydown)
+    window.removeEventListener('resize', this.mixinLmsUpdate)
+    window.removeEventListener('keydown', this.mixinOnLmsKeydown)
   },
   methods: {
-    createLMS() {
+    mixinCreateLMS() {
       this.$nextTick(
         function () {
           this.lmS = new this.LocomotiveScroll({
             el: document.querySelector('#js-scroll'),
             smooth: true /* if false disable overflow: hidden on html, body */,
             lerp: 0.07,
-            multiplier: 0.5,
+            multiplier: 0.5, // more steps to scroll
           })
           window.addEventListener(
             'resize',
-            debounce(this.onLmsResize.bind(this), 150)
+            debounce(this.mixinLmsUpdate.bind(this), 150)
           )
           window.addEventListener(
             'keydown',
-            debounce(this.onLmsKeydown.bind(this), 10)
+            debounce(this.mixinOnLmsKeydown.bind(this), 10)
           )
           window.addEventListener('wheel', (e) => {
-            this.lmS.scroll.stop = false
+            this.lmS.scroll.stop = false // activate scrolling on wheel
           })
         }.bind(this)
       )
     },
-    onLmsResize() {
+    mixinLmsUpdate() {
       this.$nextTick(() => {
         this.lmS.update()
-        window.removeEventListener('resize', this.onLmsResize)
+        window.removeEventListener('resize', this.mixinLmsUpdate)
       })
       // this.lmS.scrollTo('top', 0, 0)
     },
-    onLmsKeydown() {
+    mixinOnLmsKeydown() {
       this.$nextTick(() => {
-        // this.lmS.stop()
-        // this.lmS.update()
-        this.lmS.scroll.stop = true
-        window.removeEventListener('keydown', this.onLmsKeydown)
+        this.lmS.scroll.stop = true // deactivate scrolling on keypress
+        window.removeEventListener('keydown', this.mixinOnLmsKeydown)
       })
     },
   },
