@@ -72,7 +72,7 @@
                 'opacity-100 ': !formIsValid,
                 'opacity-100': formSendError,
               }"
-              class="text-red-300 text-xl px-8 pt-8 lg:pt-10 transition-all duration-300 opacity-0"
+              class="text-red-300 text-lg px-8 pt-8 lg:pt-10 transition-all duration-300 opacity-0"
               >{{ formMessage }}</span
             >
           </div>
@@ -131,7 +131,7 @@ export default {
     },
   },
   methods: {
-    constructFormData() {
+    buildForm() {
       // Build object to send to server
       const form = {
         services: this.selectedServices,
@@ -157,12 +157,12 @@ export default {
       }
     },
     validateForm() {
-      const invalidNameField = this.$refs.NameField.$v.$invalid
-      const invalidMailField = this.$refs.MailField.$v.$invalid
+      const invalidName = this.$refs.NameField.$v.$invalid
+      const invalidMail = this.$refs.MailField.$v.$invalid
       this.$refs.MailField.touch()
       this.$refs.NameField.touch()
       // console.log('Cheking if form is valid to send')
-      if (invalidMailField === false && invalidNameField === false) {
+      if (invalidMail === false && invalidName === false) {
         this.formIsValid = true
       } else {
         this.formIsValid = false
@@ -179,7 +179,7 @@ export default {
         await this.$axios
           .post(
             'https://us-central1-sengridmail.cloudfunctions.net/youvegotmail',
-            this.constructFormData(),
+            this.buildForm(),
             {
               progress: false,
               headers: {
@@ -200,13 +200,13 @@ export default {
             this.formSendSuccess = false
             this.formMessage =
               'Hubo un error al momento de enviar el formulario'
+            this.mixinLmsUpdate() // updates locomotive scroll
             // console.error({ statusCode: 400, message: 'Bad Request' })
           })
       } else {
         console.log('Form is not valid')
       }
       this.formLoading = false
-      // this.buttonMessage = 'Enviar'
     },
   },
 }
@@ -243,7 +243,7 @@ export default {
     bottom: 0
     width: 0%
     opacity: .25
-    background-image: linear-gradient()
+    background-image: linear-gradient() // to mask background inside button
     transition: 1s
     animation: loading 1s infinite ease-in-out
 
