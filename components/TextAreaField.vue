@@ -6,7 +6,7 @@
       placeholder="Escríbenos los detalles aquí ( max. 200 )"
       class="outline-none border-b-2 p-3 border-gray-400 focus:border-gray-900 transition-colors duration-1000 w-full resize-none overflow-auto break-words font-bold text-black"
       :class="{
-        'border-gray-900': $v.textAreaField.$dirty,
+        'border-gray-900': hasText,
       }"
       :name="text"
       cols="30"
@@ -34,6 +34,11 @@ export default {
   validations: {
     textAreaField: {
       maxLength: maxLength(200),
+    },
+  },
+  computed: {
+    hasText() {
+      return this.textAreaField.length > 0
     },
   },
   methods: {
